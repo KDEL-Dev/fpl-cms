@@ -82,7 +82,7 @@ if (!isset($_SESSION['user_id'])) {
     ?>
 
     <footer class="text-center">
-        <p>© 2025 Fantasy Premier League Database | Matchweek 7 stats</p>
+        <p>&copy; Group 3 | HTTP-5225</p>
     </footer>
 
     <style>
