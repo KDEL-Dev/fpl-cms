@@ -23,7 +23,7 @@
         <input class="form-control mb-2" type="text" name="fullName" placeholder="Full name" required>
         <label for="position">Position:</label>
         <input class="form-control mb-2" type="text" name="position" placeholder="FWD, MID, DEF, GK" required>
-        <label for="price">Price:</label>
+        <label for="price">Price (£m):</label>
         <input class="form-control mb-2" type="number" name="price" step="0.1" placeholder="7.5" required>
         <label for="position">Position:</label>
         <input class="form-control mb-2" type="number" name="points" placeholder="Enter the points for the current game week" required>
