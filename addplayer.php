@@ -21,14 +21,42 @@
     <form method="POST" enctype="multipart/form-data">
         <label for="fullName">Full Name:</label>
         <input class="form-control mb-2" type="text" name="fullName" placeholder="Full name" required>
+
         <label for="position">Position:</label>
-        <input class="form-control mb-2" type="text" name="position" placeholder="FWD, MID, DEF, GK" required>
+        <select name="position" id="position">
+            <option value="FWD">FWD</option>
+            <option value="MID">MID</option>
+            <option value="DEF">DEF</option>
+            <option value="GK">GK</option>
+        </select>
+
+        <br>
+        <!-- <label for="position">Position:</label>
+        <input class="form-control mb-2" type="text" name="position" placeholder="FWD, MID, DEF, GK" required> -->
+
         <label for="price">Price (£m):</label>
-        <input class="form-control mb-2" type="number" name="price" step="0.1" placeholder="7.5" required>
+        <input class="form-control mb-2" type="number" name="price" step="0.1" placeholder="eg. 7.5" required>
+
         <label for="position">Position:</label>
         <input class="form-control mb-2" type="number" name="points" placeholder="Enter the points for the current game week" required>
+
         <label for="totalPoints">Position:</label>
         <input class="form-control mb-2" type="number" name="totalPoints" placeholder="Enter the cumulative points" required>
+
+        <label for="fk_team">Team:</label>
+        <select class="form-control mb-3" name="fk_team" required>
+            <option value="">Select Team</option>
+            <?php
+                include 'connect.php';
+                $query = "SELECT team_id, team_name FROM teams ORDER BY team_name";
+
+                $result = mysqli_query($connect, $query);
+
+                while($teams = mysqli_fetch_assoc($result)) {
+                    echo "<option value='{$teams['team_id']}'>{$teams['team_id']}. {$teams['team_name']}</option>";
+                }
+            ?>
+        </select>    
         <!-- TODO -->
         <!-- <input class="form-control mb-2" type="file" name="image"> -->
         <button class="btn btn-success" type="submit" name="addPlayer">Submit</button>
