@@ -17,6 +17,8 @@ if (!isset($_SESSION['user_id'])) {
     <title>FPL Database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet/styles.css">
 </head>
 
 <body class="container mt-4">
@@ -57,24 +59,73 @@ if (!isset($_SESSION['user_id'])) {
 
         echo '<tbody>';
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['full_name'] . "</td>";
-            echo "<td>" . $row['position'] . "</td>";
-            echo "<td>£" . number_format($row['price'], 1) . "m</td>";
-            echo "<td>" . $row['points'] . "</td>";
-            echo "<td>" . $row['total_points'] . "</td>";
-            echo "<td>" . $row['team_name'] . "</td>";
-            echo "<td>" . $row['manager_name'] . "</td>";
-            echo "<td>" . $row['stadium'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</tbody>";
-        echo "</table>";
-        echo "</div>";
+        // while ($row = mysqli_fetch_assoc($result)) {
+        //     echo "<tr>";
+        //     echo "<td>" . $row['full_name'] . "</td>";
+        //     echo "<td>" . $row['position'] . "</td>";
+        //     echo "<td>£" . number_format($row['price'], 1) . "m</td>";
+        //     echo "<td>" . $row['points'] . "</td>";
+        //     echo "<td>" . $row['total_points'] . "</td>";
+        //     echo "<td>" . $row['team_name'] . "</td>";
+        //     echo "<td>" . $row['manager_name'] . "</td>";
+        //     echo "<td>" . $row['stadium'] . "</td>";
+        //     echo "</tr>";
+        // }
+        // echo "</tbody>";
+        // echo "</table>";
+        // echo "</div>";
     } else {
         echo "<div class='alert alert-warning text-center'>No players found.</div>";
     }
+
+    //Kadelle's Code
+
+  echo '<div class="cardContainer">';
+
+if (mysqli_num_rows($result) > 0)
+{
+    while($row = mysqli_fetch_assoc($result))
+    {
+        echo '
+        <div class="outerCard">
+            <div class="card">
+                <div class=position>
+                <h2><u>' . $row['position'] . '</u></h2>
+
+                </div>
+                <div class=playerName>
+                    <h3>' . $row['full_name'] . '</h3>
+                </div>
+                <div class=statContainer>
+                    <div class=infoCol>
+                        <p><u> Price </u></p>
+                        <h3>£' . number_format($row['price'], 1) . 'm</h3>
+                    </div>
+                    <div class="infoCol">
+                        <p><u> Total Points </u></p>
+                        <h3>' . $row['total_points'] . '</h3>
+                    </div>
+                    <div class="infoCol">
+                        <p><u> Points </u></p>
+                        <h3>' . $row['points'] . '</h3>
+                    </div>
+                </div>
+                <div class="teamInfo">
+                    <div class="teamName">
+                        <p><u> Team </u></p>
+                    <h3>' . $row['team_name'] . '</h3>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    }
+}
+else
+{
+    echo "<div class='alert alert-warning text-center'>No players found.</div>";
+}
+
+echo "</div>";
 
     mysqli_close($connect);
     ?>
@@ -84,7 +135,7 @@ if (!isset($_SESSION['user_id'])) {
     </footer>
 
     <style>
-        body {
+        /* body {
             background-color: #f8f8f8;
         }
         h1 {
@@ -99,7 +150,7 @@ if (!isset($_SESSION['user_id'])) {
             padding: 20px 0;
             background-color: #252626ff;
             color: #fff;
-        }
+        } */
     </style>
 
 </body>
