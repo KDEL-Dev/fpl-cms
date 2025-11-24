@@ -33,16 +33,16 @@ if (session_status() == PHP_SESSION_NONE) {
         <nav class="p-2 bg-transparent border-bottom border-light">
             <div class="d-flex justify-content-between flex-wrap">
                 <!-- Buttons in the navbar -->
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Matches</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Table</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Statistic</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Fantasy</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">News</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Injuries</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Players</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Clubs</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Video</button>
-                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">More</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Matches</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Table</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Statistic</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Fantasy</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">News</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Injuries</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Players</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Clubs</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">Video</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2" id="disabled">More</button>
 
 
 
@@ -194,11 +194,11 @@ echo "</div>";
     <div class="footerBtnCont">
         <div>
             <ul class="footerButtons">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">Matches</a></li>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Statistic</a></li>
-                <li><a href="#">Fantasy</a></li>
+                <li><a href="index.php" id="disabled">Home</a></li>
+                <li><a href="#" id="disabled">Matches</a></li>
+                <li><a href="#" id="disabled">Table</a></li>
+                <li><a href="#" id="disabled">Statistic</a></li>
+                <li><a href="#" id="disabled">Fantasy</a></li>
             </ul>
         </div>
 
@@ -208,39 +208,14 @@ echo "</div>";
 
         <div>
             <ul class="footerButtons">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Injuries</a></li>
-                <li><a href="#">Players</a></li>
-                <li><a href="#">Clubs</a></li>
-                <li><a href="#">Videos</a></li>
-
-
+                <li><a href="#" id="disabled">News</a></li>
+                <li><a href="#" id="disabled">Injuries</a></li>
+                <li><a href="#" id="disabled">Players</a></li>
+                <li><a href="#" id="disabled">Clubs</a></li>
+                <li><a href="#" id="disabled">Videos</a></li>
             </ul>
         </div>
     </div>
-
-    <footer class="text-center">
-        <p>&copy; Group 3 | HTTP-5225</p>
-    </footer>
-
-    <style>
-        /* body {
-            background-color: #f8f8f8;
-        }
-        h1 {
-            margin-top: 30px;
-            color: #252626ff;
-        }
-        table {
-            background-color: white;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #252626ff;
-            color: #fff;
-        } */
-    </style>
 
 </body>
 
