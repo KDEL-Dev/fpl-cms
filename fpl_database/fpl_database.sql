@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 22, 2025 at 12:52 AM
+-- Generation Time: Nov 25, 2025 at 12:44 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.3.1
 
@@ -52,8 +52,7 @@ INSERT INTO `players` (`player_id`, `full_name`, `position`, `price`, `points`, 
 (8, 'Donyell Malen', 'FWD', '5.10', 16, 22, 3),
 (9, 'Benjamin Sesko', 'FWD', '7.30', 9, 23, 14),
 (10, 'Bruno Guimaraes', 'MID', '6.50', 14, 30, 15),
-(11, 'Josko Gvardiol', 'DEF', '5.90', 12, 24, 13),
-(12, 'TEST', 'FWD', '5.50', 10, 100, 1);
+(11, 'Josko Gvardiol', 'DEF', '5.90', 12, 24, 13);
 
 -- --------------------------------------------------------
 
@@ -147,7 +146,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `teams`
