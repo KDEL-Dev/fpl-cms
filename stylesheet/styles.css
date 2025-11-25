@@ -391,3 +391,62 @@ body
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     cursor: pointer;
 }
+
+/* Edit player styling */
+
+.editplayer-wrapper {
+    border-radius: 16px;
+    max-width: 680px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid var(--mu-yellow);
+    padding: 35px 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.editplayer-wrapper h2 {
+    color: var(--mu-maroon);
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.editplayer-wrapper label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mu-maroon);
+    margin-top: 14px;
+    display: block;
+}
+
+.editplayer-wrapper input,
+.editplayer-wrapper select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 2px solid var(--mu-tangerine);
+    font-size: 16px;
+    color: black;
+    transition: 0.25s;
+}
+
+.editplayer-wrapper button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    background-color: var(--mu-tangerine);
+    border: 2px solid var(--mu-yellow);
+    color: black;
+    transition: 0.3s;
+}
+
+.editplayer-wrapper button:hover {
+    background-color: var(--mu-yellow);
+    border-color: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    cursor: pointer;
+}

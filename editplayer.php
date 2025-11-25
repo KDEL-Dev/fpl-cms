@@ -13,14 +13,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit Player</title>
+        <link rel="stylesheet" href="stylesheet/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body class="container py-5">
-        <h2>Edit Player</h2>
 
-        <?php 
-            include('nav.php'); 
+        <?php include('nav.php'); ?>
+
+        <?php
 
             require('connect.php');
 
@@ -77,44 +78,49 @@
             }
         ?>
 
-        <form method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="player_id" value="<?= $player['player_id'] ?>">
+        <div class="editplayer-wrapper">
 
-            <label>Full Name:</label>
-            <input class="form-control mb-2" type="text" name="fullName" value="<?= $player['full_name'] ?>" required>
+            <h2>Edit Player</h2>
 
-            <label for="position">Position:</label>
-            <select class="form-control mb-2" name="position" required>
-                <option value="GK" <?= $player['position']=='FWD'?'selected':'' ?> >FWD</option>
-                <option value="DEF" <?= $player['position']=='MID'?'selected':'' ?> >MID</option>
-                <option value="MID" <?= $player['position']=='DEF'?'selected':'' ?> >DEF</option>
-                <option value="FWD" <?= $player['position']=='GK'?'selected':'' ?> >GK</option>
-            </select>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="player_id" value="<?= $player['player_id'] ?>">
 
-            <label for="price">Price (£m):</label>
-            <input class="form-control mb-2" type="number" name="price" step="0.1" value="<?= $player['price'] ?>" required>
+                <label>Full Name:</label>
+                <input class="form-control mb-2" type="text" name="fullName" value="<?= $player['full_name'] ?>" required>
 
-            <label for="points">Points for the current gameweek:</label>
-            <input class="form-control mb-2" type="number" name="points" value="<?= $player['points'] ?>" required>
+                <label for="position">Position:</label>
+                <select class="form-control mb-2" name="position" required>
+                    <option value="GK" <?= $player['position']=='FWD'?'selected':'' ?> >FWD</option>
+                    <option value="DEF" <?= $player['position']=='MID'?'selected':'' ?> >MID</option>
+                    <option value="MID" <?= $player['position']=='DEF'?'selected':'' ?> >DEF</option>
+                    <option value="FWD" <?= $player['position']=='GK'?'selected':'' ?> >GK</option>
+                </select>
 
-            <label for="totalPoints">Total Points:</label>
-            <input class="form-control mb-2" type="number" name="totalPoints" value="<?= $player['total_points'] ?>" required>
+                <label for="price">Price (£m):</label>
+                <input class="form-control mb-2" type="number" name="price" step="0.1" value="<?= $player['price'] ?>" required>
 
-            <label for="fk_team">Team:</label>
-            <select class="form-control mb-3" name="fk_team" required>
-                <?php
-                    $query = "SELECT team_id, team_name FROM teams ORDER BY team_name";
-                    $result = mysqli_query($connect, $query);
+                <label for="points">Points for the current gameweek:</label>
+                <input class="form-control mb-2" type="number" name="points" value="<?= $player['points'] ?>" required>
 
-                    while($teams = mysqli_fetch_assoc($result)) {
-                        $selected = ($teams['team_id'] == $player['fk_team']) ? "selected" : "";
-                        echo "<option value='{$teams['team_id']}' $selected>{$teams['team_id']}. {$teams['team_name']}</option>";
-                    }
-                ?>
-            </select>
+                <label for="totalPoints">Total Points:</label>
+                <input class="form-control mb-2" type="number" name="totalPoints" value="<?= $player['total_points'] ?>" required>
 
-            <button class="btn btn-primary" type="submit">Update Player</button>
-        </form>
+                <label for="fk_team">Team:</label>
+                <select name="fk_team" required>
+                    <?php
+                        $query = "SELECT team_id, team_name FROM teams ORDER BY team_name";
+                        $result = mysqli_query($connect, $query);
+
+                        while($teams = mysqli_fetch_assoc($result)) {
+                            $selected = ($teams['team_id'] == $player['fk_team']) ? "selected" : "";
+                            echo "<option value='{$teams['team_id']}' $selected>{$teams['team_id']}. {$teams['team_name']}</option>";
+                        }
+                    ?>
+                </select>
+
+                <button type="submit">Update Player</button>
+            </form>
+        </div>
         
     </body>
     </html>
